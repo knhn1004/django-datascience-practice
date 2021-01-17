@@ -2,8 +2,14 @@
 {% block title %} {% endblock title %}
 {% block content %}
   <h1>Products & Purchases</h1>
+  <h2>Products</h2>
   <div>{{ products | safe}}</div>
   <hr>
   
+  <h2>Purchases</h2>
   <div>{{ purchases | safe}}</div>
+  <hr>
+
+  <h2>Merged</h2>
+  <div>{{ df | safe }}</div>
 {% endblock content %}
