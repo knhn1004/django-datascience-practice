@@ -1,0 +1,9 @@
+{% extends 'base.html' %} 
+{% block title %} {% endblock title %}
+{% block content %}
+  <h1>Products & Purchases</h1>
+  <div>{{ products | safe}}</div>
+  <hr>
+  
+  <div>{{ purchases | safe}}</div>
+{% endblock content %}
