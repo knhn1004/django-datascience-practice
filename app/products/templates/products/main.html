@@ -1,15 +1,39 @@
 {% extends 'base.html' %} 
 {% block title %} {% endblock title %}
 {% block content %}
-  <h1>Products & Purchases</h1>
-  <h2>Products</h2>
-  <div>{{ products | safe}}</div>
-  <hr>
-  
-  <h2>Purchases</h2>
-  <div>{{ purchases | safe}}</div>
+  <h1>Performance</h1>
+  {{ df | safe }}
   <hr>
 
-  <h2>Merged</h2>
-  <div>{{ df | safe }}</div>
+  <form action="" method="POST" class="ui form mtop">
+    {% csrf_token %}
+        <div class="field">
+            <label>Choose a chart type: </label>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="sales">
+                <i class="dropdown icon"></i>
+                <div class="default text">----</div>
+                <div class="menu">
+                    <div class="item" value="bar">Bar plot</div>
+                    <div class="item" value="line">Line plot</div>
+                    <div class="item" value="count">Count plot</div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="two fields">
+                <div class="field">
+                    <label>Date from: </label>
+                    <input type="date" name="date_from">
+                </div>
+                <div class="field">
+                    <label>Date to: </label>
+                    <input type="date" name="date_to">
+                </div>
+            </div>
+        </div>
+        <div class="block-center">
+            <button class='ui primary button' type='submit'>Select</button>
+        </div>
+    </form>
 {% endblock content %}

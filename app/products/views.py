@@ -16,7 +16,8 @@ def chart_select_view(request):
         'id_x': 'id',
         'date_x': 'date'
     },
-        axis=1)
+        axis=1
+    )
 
     context = {
         'products': product_df.to_html(),

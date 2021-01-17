@@ -121,8 +121,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # for project devlopment assets
-STAICFILES_DIRS = [
-    BASE_DIR.joinpath('assets')
+STATICFILES_DIRS = [
+    BASE_DIR.joinpath('assets'),
 ]
 
 # collection
